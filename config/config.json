@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "conflict-registry-submit-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/conflictRegistrySubmit/ConflictRegistrySubmitWebPart.js",
+          "manifest": "./src/webparts/conflictRegistrySubmit/ConflictRegistrySubmitWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "ConflictRegistrySubmitWebPartStrings": "lib/webparts/conflictRegistrySubmit/loc/{locale}.js"
+  }
+}

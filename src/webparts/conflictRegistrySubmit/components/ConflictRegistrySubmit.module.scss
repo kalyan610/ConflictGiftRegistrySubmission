@@ -1,0 +1,371 @@
+@import '~@fluentui/react/dist/sass/References.scss';
+
+.conflictRegistrySubmit {
+  overflow: hidden;
+  padding: 1em;
+  color: "[theme:bodyText, default: #323130]";
+  color: var(--bodyText);
+  &.teams {
+    font-family: $ms-font-family-fallbacks;
+  }
+}
+
+welcome {
+  text-align: center;
+  font-size: 80px;
+  width:60%
+}
+
+.welcomeImage {
+  width: 100%;
+  max-width: 420px;
+}
+
+.Approvebutton {
+  width: 20%;
+  max-width: 420px;
+}
+
+.Divsection
+{
+
+  padding:10px;
+
+
+}
+
+
+.DivsectionComments
+{
+
+  padding:1px;
+
+  width:80%
+
+
+}
+
+.HeadLable {
+  font-size: 18px;
+ font-family: Cambria;
+//  color: red;
+
+}
+
+.HeadPara {
+  font-size: 14px;
+ font-family: Cambria;
+
+}
+
+.welcome {
+  text-align: center;
+  font-size: 80px;
+  width:40%
+
+}
+
+.recolorss
+{
+
+  color: #FF0000;
+}
+
+.onlyFont
+{
+
+  font-family: "Cambria";
+  font-size: medium;
+
+}
+
+.boxsize
+{
+
+ 
+
+  width: 60%;
+
+  height:25px;
+
+  font-size: medium;
+
+  font-family: "Cambria";
+
+  font-weight: $ms-font-weight-regular;
+
+}
+
+.boxsizeContactInfo
+{
+
+  width: 110%;
+
+  height:25px;
+
+  font-size: medium;
+
+  font-family: "Cambria";
+
+  font-weight: $ms-font-weight-regular;
+
+}
+
+.boxsizemultiline
+{
+
+ 
+
+  width: 70%;
+
+  height:45px;
+
+  font-size: medium;
+
+  font-family: "Cambria";
+
+  font-weight: $ms-font-weight-regular;
+
+}
+
+.boxsize1
+{
+
+ 
+
+  width: 30%;
+
+  height:40px;
+
+  font-size: medium;
+
+  font-family: "Cambria";
+
+  font-weight: $ms-font-weight-regular;
+
+}
+
+.Pepsize
+{
+
+ 
+
+  width: 25%;
+
+  height:15px;
+
+  font-size: medium;
+
+  font-family: "Cambria";
+
+  font-weight: $ms-font-weight-regular;
+
+}
+
+
+
+
+.links {
+  width: 30%;
+
+  height:25px;
+
+  font-size: medium;
+
+  font-family: "Cambria";
+
+  font-weight: $ms-font-weight-regular;
+}
+
+
+
+.labelsFonts
+{
+
+  font-size: 14px;
+
+  font-family: Cambria;
+
+  
+}
+
+.labelsFontsComments
+{
+
+  font-size: 14px;
+
+  font-family: Cambria;
+
+ 
+}
+
+
+.coststyle
+
+{
+
+
+  font-family: "Cambria";
+  font-size: 18;
+ 
+}
+
+.padcss
+{
+
+  padding-top: 10px;
+
+}
+
+.boxsizeMain
+{
+
+  width: 40%;
+
+  height:25px;
+
+  font-size: medium;
+
+  font-family: "Cambria";
+
+  font-weight: $ms-font-weight-regular;
+
+}
+
+
+.textAreacss
+{
+
+  width: 330px;
+  height: 45px;
+  
+  font-size: medium;
+
+  font-family: "Cambria";
+
+  font-weight: $ms-font-weight-regular;
+
+}
+
+
+// .Collapsible {
+//   // background-color: cyan;
+// //   padding: 10px;
+// // border: 1px solid;
+// // border-top: 0;
+
+// //   display: block;
+// //   font-weight: 400;
+// //   text-decoration: none;
+// //   position: relative;
+// //   border: 1px solid white;
+// //   padding: 10px;
+  
+// //   color: white;
+
+// //     &:after {
+// //     font-family: 'FontAwesome';
+// //     content: '\f107';
+// //     position: absolute;
+// //     right: 10px;
+// //     top: 10px;
+// //     display: block;
+// //     transition: transform 300ms;
+// //   }
+
+// //   &.is-open {
+// //     &:after {
+// //       transform: rotateZ(180deg);
+// //     }
+// //   }
+
+// //   &.is-disabled {
+// //     opacity: 0.5;
+// //     background-color: grey;
+// //   }
+
+
+// //   background-color: lightcoral;
+// //   transition: background-color 200ms ease;
+
+
+// }
+
+
+// //The content within the collaspable area
+// .Collapsible__contentInner {
+//   padding: 10px;
+//   border: 1px solid gray;
+//   border-top: 0;
+
+//   p {
+//     margin-bottom: 10px;
+//     font-size: 14px;
+//     line-height: 20px;
+
+//     &:last-child {
+//       margin-bottom: 0;
+//     }
+//   }
+// }
+
+//The link which when clicked opens the collapsable area
+.Collapsible__trigger {
+  display: block;
+  font-weight: 400;
+  text-decoration: none;
+  position: relative;
+  border: 1px solid white;
+  padding: 10px;
+  background: cyan;
+  color: white;
+
+
+  &:after {
+    font-family: 'FontAwesome';
+    content: '\f107';
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: block;
+    transition: transform 300ms;
+  }
+
+  &.is-open {
+    &:after {
+      transform: rotateZ(180deg);
+    }
+  }
+
+  &.is-disabled {
+    opacity: 0.5;
+    background-color: grey;
+  }
+}
+
+.CustomTriggerCSS {
+  background-color: lightcoral;
+  transition: background-color 200ms ease;
+  
+  
+}
+
+.CustomTriggerCSS--open {
+  background-color: darkslateblue;
+}
+
+.Collapsible__custom-sibling {
+  padding: 5px;
+  font-size: 12px;
+  background-color: #CBB700;
+  color: black;
+}
+
+.Mainheading
+{
+
+  font-size: 20px;
+  font-family: Cambria;
+
+  color: red;
+}

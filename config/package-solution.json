@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "conflict-registry-submit-client-side-solution",
+    "id": "59e88d30-be62-408b-97c5-6dbc97ddb727",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.16.1"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "ConflictRegistrySubmit description"
+      },
+      "longDescription": {
+        "default": "ConflictRegistrySubmit description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "conflict-registry-submit Feature",
+        "description": "The feature that activates elements of the conflict-registry-submit solution.",
+        "id": "adb2da91-ea66-474d-ad45-6d08b389b4b9",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/conflict-registry-submit.sppkg"
+  }
+}
