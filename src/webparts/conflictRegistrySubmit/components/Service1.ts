@@ -30,7 +30,7 @@ export default class Service {
 public async test123():Promise<any>
 {
 
-    this.Save('','','','','','','','','','','','','','','','','','','','','','');
+    this.Save('','','','','','','','','','','','','','','','','','','','','','','');
 
 }
 
@@ -163,8 +163,11 @@ public async test123():Promise<any>
 
          //Conflict
         MyConflictYesNo:string,
-        MyDetailsofConflict:string
+        MyDetailsofConflict:string,
+        MyBussinessString:string
         //End
+
+        
 
 
       )  {
@@ -207,6 +210,11 @@ public async test123():Promise<any>
             ConflictofIntrest:MyConflictYesNo,
             DetailsofConflict:MyDetailsofConflict,
 
+            //End
+
+            //Last
+
+            BussinessValue:MyBussinessString,
             //End
 
             Title: "Request Created",
@@ -253,6 +261,8 @@ public async test123():Promise<any>
         
         //End
 
+        MyBussinessString:string
+
 
       )  {
 
@@ -276,7 +286,10 @@ public async test123():Promise<any>
             ConflictofIntrest:MyConflictYesNo,
            //End
 
+           BussinessValue:MyBussinessString,
+
             Title: "Request With All NOS",
+            
             
         }).then (async r => {
           // this will add an attachment to the item we just created to push t sharepoint list

@@ -30,13 +30,15 @@ let paidorunpaidCheckboxvalue='';
 let BoardofDirectorsCheckboxValue='';
 //let FinalPaidArray='';
 
+let Envval='';
 
+let BussinessValuetext='';
 
 const stackTokens1 = { childrenGap: 80 };
 const drpYesorNo:IDropdownOption[]=[  { key: "Yes", text: "Yes"},  { key: "No", text: "No" }];  
 
 const dropdownStyles: Partial<IDropdownStyles> = {
-  dropdown: { width: 250 },
+  dropdown: { width: 350 },
 };
 
 
@@ -165,6 +167,7 @@ export default class ConflictRegistrySubmit extends React.Component<IConflictReg
     this.GetAllBussinessUnits();
     this.GetAllCompanyType();
     this.GetAllFinancialServices();
+    this.GetEnvironment();
 
     
   }
@@ -187,6 +190,8 @@ export default class ConflictRegistrySubmit extends React.Component<IConflictReg
 
     
     this.setState({ MyBussinessUnitValue:item.key });
+
+    BussinessValuetext=item.text;
 
   }
 
@@ -505,12 +510,34 @@ export default class ConflictRegistrySubmit extends React.Component<IConflictReg
   }
 
 
+  public async GetEnvironment()
+  {
+
+    var data = await this._service.getEnvironment();
+
+    console.log(data);
+
+    var AllEnvironments: any = [];
+
+    for (var k in data) {
+
+      AllEnvironments.push({ key: data[k].ID, text: data[k].Title});
+
+      Envval=data[0].Title;
+
+      
+    }
+
+   
+  }
+
+
   private changeStockvalue(data: any): void {
 
-    const re = /^[0-9\b]+$/;
-      if (data.target.value === '' || re.test(data.target.value)) {
+    //const re = /^[0-9\b]+$/;
+      //if (data.target.value === '' || re.test(data.target.value)) {
         this.setState({ StockValue: data.target.value });
-      }
+      //}
 
   }
 
@@ -582,7 +609,7 @@ export default class ConflictRegistrySubmit extends React.Component<IConflictReg
     else if(this.state.MyBussinessUnitValue=='')
     {
 
-      alert('Please select the bussiness unit')
+      alert('Please select the business unit')
     }
 
     //EndSection1
@@ -786,7 +813,13 @@ export default class ConflictRegistrySubmit extends React.Component<IConflictReg
 
             //Conflict
             this.state.MyConflictYesNo,
-            this.state.detailsconflict
+            this.state.detailsconflict,
+
+            //End
+
+            //LastValues
+
+            BussinessValuetext
 
             //End
 
@@ -797,7 +830,12 @@ export default class ConflictRegistrySubmit extends React.Component<IConflictReg
           
                 console.log(data);
     
-               alert('Record submitted successfully 1st');
+               
+                
+    
+                alert('Record submitted successfully');
+ 
+                window.location.replace(Envval);
                 
               });
                   
@@ -883,18 +921,22 @@ export default class ConflictRegistrySubmit extends React.Component<IConflictReg
 
             //Conflict
             this.state.MyConflictYesNo,
-            this.state.detailsconflict
+            this.state.detailsconflict,
 
             //End
 
-
+            BussinessValuetext
               
               ).then(function (data:any)
               {
           
                 console.log(data);
+
+                
     
-               alert('Record submitted successfully 8th');
+               alert('Record submitted successfully ');
+
+               window.location.replace(Envval);
                 
               });
                   
@@ -1006,18 +1048,21 @@ export default class ConflictRegistrySubmit extends React.Component<IConflictReg
 
           //Conflict
           this.state.MyConflictYesNo,
-          this.state.detailsconflict
+          this.state.detailsconflict,
 
           //End
 
-
+          BussinessValuetext
             
             ).then(function (data:any)
             {
         
               console.log(data);
-  
-             alert('Record submitted successfully 2nd');
+
+              
+             alert('Record submitted successfully ');
+
+             window.location.replace(Envval);
               
             });
                 
@@ -1108,18 +1153,22 @@ export default class ConflictRegistrySubmit extends React.Component<IConflictReg
 
             //Conflict
             this.state.MyConflictYesNo,
-            this.state.detailsconflict
+            this.state.detailsconflict,
 
             //End
 
-
+            BussinessValuetext
               
               ).then(function (data:any)
               {
           
                 console.log(data);
+
+                
     
-               alert('Record submitted successfully 3rd');
+               alert('Record submitted successfully');
+
+               window.location.replace(Envval);
                 
               });
       
@@ -1284,18 +1333,22 @@ export default class ConflictRegistrySubmit extends React.Component<IConflictReg
 
           //Conflict
           this.state.MyConflictYesNo,
-          this.state.detailsconflict
+          this.state.detailsconflict,
 
           //End
 
-
+          BussinessValuetext
             
             ).then(function (data:any)
             {
         
               console.log(data);
   
-             alert('Record submitted successfully 4th');
+             
+    
+               alert('Record submitted successfully ');
+
+               window.location.replace(Envval);
               
             });
 
@@ -1382,10 +1435,11 @@ export default class ConflictRegistrySubmit extends React.Component<IConflictReg
 
           //Conflict
           this.state.MyConflictYesNo,
-          this.state.detailsconflict
+          this.state.detailsconflict,
 
           //End
-
+            
+          BussinessValuetext
 
             
             ).then(function (data:any)
@@ -1393,7 +1447,11 @@ export default class ConflictRegistrySubmit extends React.Component<IConflictReg
         
               console.log(data);
   
-             alert('Record submitted successfully 5th');
+              
+    
+               alert('Record submitted successfully ');
+
+               window.location.replace(Envval);
               
             });
                 
@@ -1500,18 +1558,22 @@ export default class ConflictRegistrySubmit extends React.Component<IConflictReg
 
             //Conflict
             this.state.MyConflictYesNo,
-            this.state.detailsconflict
+            this.state.detailsconflict,
 
             //End
 
-
+            BussinessValuetext
               
               ).then(function (data:any)
               {
           
                 console.log(data);
     
-               alert('Record submitted successfully 6th');
+                
+    
+               alert('Record submitted successfully ');
+
+               window.location.replace(Envval);
                 
               });
                   
@@ -1540,11 +1602,11 @@ export default class ConflictRegistrySubmit extends React.Component<IConflictReg
          //End
 
          //Conflict
-        this.state.MyConflictYesNo
+        this.state.MyConflictYesNo,
         
         //End
 
-
+        BussinessValuetext
 
               
           ).then(function (data:any)
@@ -1552,7 +1614,11 @@ export default class ConflictRegistrySubmit extends React.Component<IConflictReg
       
             console.log(data);
 
-           alert('Record submitted successfully 7th');
+            
+    
+            alert('Record submitted successfully ');
+
+            window.location.replace(Envval);
             
           });
       }
@@ -1615,18 +1681,16 @@ export default class ConflictRegistrySubmit extends React.Component<IConflictReg
 <br></br>
 {/* <Collapsible trigger="Please advise of any outside of work employment/ activities outlined within the acknowledgement above that you are involved in. The noted activities " className={styles.HeadLable}> */}
 
-<b><label className={styles.Mainheading}>Please advise of any outside of work employment/ activities outlined within the acknowledgement above that you are involved in. The noted activities</label></b><br/>
-
 <div className={styles.Divsection}>
 
-<b><label className={styles.HeadLable}>Work Employment / Activities</label></b><br/>
+<b><label className={styles.Mainheading}>Outside Work Employment / Activities</label></b><br/>
 
 </div>
 
 <Stack horizontal tokens={stackTokens1}>
 <StackItem className={styles.coststyle} >
 <div className={styles.Divsection}> 
-<b><label className={styles.labelsFonts}>Do you wish to register any outside of work employment or activities outlined within the acknowledgement above that you are involved in? <label className={styles.recolorss}>*</label></label></b><br/><br/> 
+<b><label className={styles.labelsFonts}>Do you wish to register any other employment or activities that you are involved in outside of your Capco employment? <label className={styles.recolorss}>*</label></label></b><br/><br/> 
 <Dropdown className={styles.onlyFont}
   placeholder="Select  Yes or NO"
   options={drpYesorNo}
@@ -1647,7 +1711,7 @@ export default class ConflictRegistrySubmit extends React.Component<IConflictReg
 </div><br></br>
 
 <div className={styles.Divsection}> 
-<b><label className={styles.labelsFonts}> Type of Company / Registration Number<label className={styles.recolorss}>*</label></label></b><br/><br/> 
+<b><label className={styles.labelsFonts}> Type of Company and Registration Number<label className={styles.recolorss}>*</label></label></b><br/><br/> 
 <input type="text" name="txttypecmpRegNumber" className={styles.boxsize} value={this.state.RegisterNumber} onChange={this.changeRegisterNumber.bind(this)}/><br></br>
 </div>
 
@@ -1737,7 +1801,7 @@ export default class ConflictRegistrySubmit extends React.Component<IConflictReg
 <b><label className={styles.Mainheading}>Share Ownership</label></b><br/>
 <div className={styles.Divsection}>
 
-<b><label className={styles.HeadLable}>Do you maintain ownership of a company stock greater than 5%?</label></b><br/><br/> 
+<b><label className={styles.labelsFonts}>Do you maintain ownership of a company stock greater than 5%?</label></b><br/><br/> 
 <input type="text" name="txtstockvalue" className={styles.boxsize} value={this.state.StockValue} onChange={this.changeStockvalue.bind(this)}/><br></br>
 </div>
 
@@ -1747,7 +1811,7 @@ export default class ConflictRegistrySubmit extends React.Component<IConflictReg
 
 {/* <Collapsible trigger="Insider List Description" className={styles.HeadLable}> */}
 
-<b><label className={styles.Mainheading}>Insider List Description</label></b><br/>
+<b><label className={styles.Mainheading}> Insider Trading List Identification</label></b><br/>
 
 
 <div className={styles.Divsection}>
@@ -1756,22 +1820,26 @@ export default class ConflictRegistrySubmit extends React.Component<IConflictReg
 
 </div>
 
-<div className={styles.Divsection}>
+{/* <div className={styles.Divsection}>
 
 <b><label className={styles.HeadLable}>Insider List</label></b><br/>
 
-</div>
+</div> */}
 
-<br></br>
 
-<p className={styles.HeadPara}>As required by the Market Abuse Regulation (Regulation 596/2014), a list maintained by issuers (or any person acting on their behalf or on their account) which includes details of all persons who have access to inside</p>
-<p className={styles.HeadPara}>information and who are working for them under a contract of employment, or otherwise performing tasks through which they have access to inside information.</p><br></br>
-<p className={styles.HeadPara}>For the purposes of the Market Abuse Regulation (Regulation 596/2014), information of a precise nature, that:</p><br></br>
+<p className={styles.HeadPara}>As required by the Market Abuse Regulation (Regulation 596/2014); a list maintained by issuers (or any person<br></br>   
+acting on their behalf or on their account) which includes details of all persons who have access to inside<br></br>     
+information and who are working for them under a contract of employment, or otherwise performing tasks<br></br>
+through which they have access to inside information.
+
+</p>
+
+<p className={styles.HeadPara}>For the purposes of the Market Abuse Regulation (Regulation 596/2014), information of a precise nature, that:</p>
 
 <ul>
-  <li>has not been made public;</li>
-  <li>relates, directly or indirectly, to one or more issuers or to one or more financial instruments; and</li>
-  <li>if it were made public, would be likely to have a significant effect on the prices of those financial instruments or on the price of related derivative financial instruments (that is, it is information that a reasonable investor would be likely to use as part of the basis of their investment decisions).</li>
+  <li className={styles.HeadPara}>Has not been made public</li>
+  <li className={styles.HeadPara}>Relates, directly or indirectly, to one or more issuers or to one or more financial instruments; and</li>
+  <li className={styles.HeadPara}>If it were made public, would be likely to have a significant effect on the prices of those financial instruments or on the price of related derivative financial instruments (that is, it is information that a reasonable investor would be likely to use as part of the basis of their investment decisions).</li>
 </ul>  
 
 
@@ -1780,12 +1848,12 @@ export default class ConflictRegistrySubmit extends React.Component<IConflictReg
 
 <br></br>
 
-<b><label className={styles.Mainheading}>Insider Trading List Identification</label></b><br/>
+{/* <b><label className={styles.HeadLable}>Insider Trading List Identification</label></b><br/> */}
 
-{/* <Collapsible trigger="Insider Trading List Identification" className={styles.HeadLable}> */}
-<div className={styles.Divsection}>
+
+{/* <div className={styles.Divsection}>
 <b><label className={styles.HeadLable}>Insider Information</label></b><br></br>
-</div>
+</div> */}
 
 <Stack horizontal tokens={stackTokens1}>
 <StackItem className={styles.coststyle} >
@@ -1819,6 +1887,7 @@ export default class ConflictRegistrySubmit extends React.Component<IConflictReg
                             value={this.state.dtinsider}
                             formatDate={this._onFormatDate1}
                             isMonthPickerVisible={false}
+                            className={styles.boxsize}
                             />
   
                             <br></br>
@@ -1842,6 +1911,7 @@ export default class ConflictRegistrySubmit extends React.Component<IConflictReg
                             value={this.state.dtpublic}
                             formatDate={this._onFormatDate1}
                             isMonthPickerVisible={false}
+                            className={styles.boxsize}
                             />
 </div>
 
